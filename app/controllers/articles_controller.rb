@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+before_filter :require_login, only: [:destroy, :new, :create, :edit, :update]
 	def index
   		@articles = Article.all
 	end
